@@ -13,14 +13,17 @@ const Users = require('./server/models/user/user');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(function(req, res, next) {
+/* app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
-});
+}); */
 //app.use(cors());
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: '*' }));
+//app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'https://salom-vercel-deploy-9g6g.vercel.app/' }));
+
 
 app.use('/static', express.static(path.join(__dirname, './server/public/images')))
 app.use('/static', express.static(path.join(__dirname, './server/public/images/vendor-images')))
