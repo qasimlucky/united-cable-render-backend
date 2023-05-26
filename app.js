@@ -20,7 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 //app.use(cors());
-app.use(cors({ credentials: true, origin: '*' }));
+//app.use(cors({ credentials: true, origin: '*' }));
 //app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 //app.use(cors({ credentials: true, origin: 'https://salom-vercel-deploy-9g6g.vercel.app/' }));
 
